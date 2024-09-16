@@ -1,0 +1,52 @@
+
+#include <stdio.h>
+
+
+struct MarkSheet{
+  int roll_no;
+  char name[50];
+  int chem_marks,maths_marks,phy_marks;
+};
+
+int main() {
+    
+    struct MarkSheet Marks[2];
+    
+    for(int i=0;i<2;i++)
+    {
+        printf("Enter Roll No:- ");
+        scanf("%d",&Marks[i].roll_no);
+        
+        printf("Enter Name:- ");
+        scanf("%s",Marks[i].name);
+        
+        printf("Enter Chemistry Mark:- ");
+        scanf("%d",&Marks[i].chem_marks);
+        
+        printf("Enter Maths Mark:- ");
+        scanf("%d",&Marks[i].maths_marks);
+        
+        printf("Enter Physics Mark:- ");
+        scanf("%d",&Marks[i].phy_marks);
+        
+        printf("\n");
+        
+    }
+    
+    for(int i=0;i<2;i++)
+    {
+        int total=Marks[i].chem_marks+Marks[i].maths_marks+Marks[i].phy_marks;
+        float per=total/3.0;
+        printf("\nName:- %s(%d)",Marks[i].name,Marks[i].roll_no);
+        printf("\nChemistry Mark:- %d",Marks[i].chem_marks);
+        printf("\nMaths Mark:- %d",Marks[i].maths_marks);
+        printf("\n Physics Mark:- %d",Marks[i].phy_marks);
+        printf("\n Total:- %d/300",total);
+        printf("\n Percent:- %.2f",per);
+        
+    }
+    
+    
+
+    return 0;
+}
